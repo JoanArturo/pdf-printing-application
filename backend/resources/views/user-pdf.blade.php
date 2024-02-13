@@ -13,19 +13,29 @@
 
         #watermark {
             position: fixed;
-            top: 45%;
-            width: 100%;
+
+            /**
+                Set a position in the page for your image
+                This should center it vertically
+            **/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            opacity: .6;
-            transform: rotate(-10deg);
-            transform-origin: 50% 50%;
-            z-index: -1000;
+
+            /** Change image dimensions**/
+            width:    8cm;
+            height:   8cm;
+            opacity: 0.5;
+
+            /** Your watermark should be behind every content**/
+            z-index:  -1000;
         }
     </style>
 </head>
 <body>
     <div id="watermark">
-        DRAFT
+        <img src="img/logo.png" alt="Logo" width="140" height="140">
     </div>
 
     <h1>Page 1</h1>
