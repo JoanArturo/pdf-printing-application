@@ -1,0 +1,15 @@
+section {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+button {
+  padding: 14px 18px;
+  font-size: 16px;
+  background-color: #5064e9;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.3);
+}
