@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Barryvdh\DomPDF\Facade\Pdf;
+use Mccarlosen\LaravelMpdf\Facades\LaravelMpdf as PDF;
 
 class UserController extends Controller
 {
@@ -16,7 +16,12 @@ class UserController extends Controller
             'role' => 'Admin'
         ];
 
-        $pdf = Pdf::loadView('user-pdf', compact('data'));
+        $pdf = PDF::loadView('pdfs.user', compact('data'), [], [
+                'show_watermark_image' => true,
+                'watermark_image_path' => 'img/logo.png',
+                'watermark_image_size' => [100, 100],
+            ]
+        );
 
         return $pdf->download('user_report.pdf');
     }
