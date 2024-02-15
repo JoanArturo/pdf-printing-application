@@ -23,6 +23,6 @@ class UserController extends Controller
             ]
         );
 
-        return $pdf->download('user_report.pdf');
+        return $pdf->output();
     }
 }
